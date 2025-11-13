@@ -1,0 +1,12 @@
+CREATE DATABASE webapp_postagens;
+USE webapp_postagens;
+
+CREATE TABLE paginas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    page_id VARCHAR(255) NOT NULL UNIQUE,
+    access_token TEXT NOT NULL,
+    data_expiracao DATE
+);
+
+SELECT * FROM paginas;

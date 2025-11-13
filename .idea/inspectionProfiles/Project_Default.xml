@@ -1,0 +1,50 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="annotated-types" />
+          <option value="blinker" />
+          <option value="cachetools" />
+          <option value="click" />
+          <option value="Cython" />
+          <option value="Flask" />
+          <option value="flask-cors" />
+          <option value="google-ai-generativelanguage" />
+          <option value="google-api-core" />
+          <option value="google-api-python-client" />
+          <option value="google-auth" />
+          <option value="google-auth-httplib2" />
+          <option value="googleapis-common-protos" />
+          <option value="grpcio" />
+          <option value="grpcio-status" />
+          <option value="httplib2" />
+          <option value="itsdangerous" />
+          <option value="Jinja2" />
+          <option value="Mako" />
+          <option value="Markdown" />
+          <option value="MarkupSafe" />
+          <option value="meson" />
+          <option value="mysql-connector-python" />
+          <option value="packaging" />
+          <option value="proto-plus" />
+          <option value="protobuf" />
+          <option value="pyasn1" />
+          <option value="pyasn1_modules" />
+          <option value="pydantic" />
+          <option value="pydantic_core" />
+          <option value="pyparsing" />
+          <option value="python-dotenv" />
+          <option value="rsa" />
+          <option value="tqdm" />
+          <option value="typing-inspection" />
+          <option value="typing_extensions" />
+          <option value="uritemplate" />
+          <option value="Werkzeug" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnnecessaryCastInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  </profile>
+</component>

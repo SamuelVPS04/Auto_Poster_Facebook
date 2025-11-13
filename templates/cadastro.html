@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Página</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header-buttons">
+        <a href="/">Voltar</a>
+        <a href="/lista_pagina">Ver Páginas</a>
+    </div>
+
+    <div class="container">
+        <h1>Cadastrar Nova Página</h1>
+        <form method="POST" action="/salvar_pagina">
+            <label>Nome da Página:</label>
+            <input type="text" name="nome" required>
+
+            <label>ID da Página:</label>
+            <input type="text" name="page_id" required>
+
+            <label>Access Token:</label>
+            <input type="text" name="access_token" required>
+
+            <label>Data de Expiração:</label>
+            <input type="date" name="data_expiracao">
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>

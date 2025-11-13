@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados da Postagem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resultados da Postagem</h1>
+    <ul>
+        {% for r in resultados %}
+        <li>{{ r }}</li>
+        {% endfor %}
+    </ul>
+    <button onclick="window.location.href='/'">Voltar</button>
+</body>
+</html>

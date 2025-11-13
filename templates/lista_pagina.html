@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Páginas Cadastradas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header-buttons">
+        <a href="/">Voltar</a>
+        <a href="/cadastro">Cadastrar Nova Página</a>
+    </div>
+
+    <div class="container">
+        <h1>Páginas Cadastradas</h1>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>ID da Página</th>
+                    <th>Data de Expiração</th>
+                </tr>
+                {% for p in paginas %}
+                <tr>
+                    <td>{{ p[0] }}</td>
+                    <td>{{ p[1] }}</td>
+                    <td>{{ p[2] }}</td>
+                    <td>{{ p[3] or 'Não definida' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

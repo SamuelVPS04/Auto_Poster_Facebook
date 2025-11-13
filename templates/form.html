@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Automatizador de Postagens no Facebook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Botões de navegação -->
+    <div class="header-buttons">
+        <a href="{{ url_for('cadastro') }}">Cadastrar Página</a>
+        <a href="{{ url_for('lista_pagina') }}">Ver Páginas</a>
+    </div>
+
+    <!-- Form principal -->
+    <div class="container">
+        <h1>Automatizador de Postagens no Facebook</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash">
+                    <p><b>Resultados:</b></p>
+                    {% for result in messages[0].items() %}
+                        <p class="page-result">{{ result[1] }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/postar" method="POST" enctype="multipart/form-data">
+            <label for="mensagem">Texto principal:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <label for="hashtags">Hashtags:</label>
+            <input type="text" id="hashtags" name="hashtags" placeholder="#exemplo #hashtag">
+
+            <label for="link">Link:</label>
+            <input type="url" id="link" name="link" placeholder="https://...">
+
+            <label for="imagem">Imagem (opcional):</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*">
+
+            <label for="paginas">Selecionar páginas:</label>
+            <select id="paginas" name="paginas" multiple>
+                <option value="todas">Todas as páginas</option>
+                {% for pagina in paginas %}
+                    <option value="{{ pagina['page_id'] }}">{{ pagina['nome'] }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Publicar</button>
+        </form>
+    </div>
+</body>
+</html>
