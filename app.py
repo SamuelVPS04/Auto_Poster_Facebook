@@ -4,7 +4,11 @@ from datetime import datetime
 import requests
 from urllib.parse import unquote
 from urllib.parse import quote
+import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -12,8 +16,8 @@ app = Flask(__name__)
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Sv130804@',  # altere para sua senha
-    'database': 'webapp_postagens'  # altere para o nome do seu banco
+    'password': os.getenv("DB_PASSWORD"),
+    'database': 'webapp_postagens'
 }
 
 # --- Função de conexão com o banco ---
